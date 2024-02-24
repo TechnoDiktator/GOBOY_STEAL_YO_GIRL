@@ -89,6 +89,7 @@ func updateMovie(w http.ResponseWriter , r *http.Request){
 			movie.ID = params["id"]
 			movies = append(movies , movie)
 			json.NewEncoder(w).Encode(movie) 
+			return
 		}
 	}
 
@@ -119,7 +120,7 @@ func main(){
 	r.HandleFunc("/movies/{id}" , deleteMovie).Methods("DELETE")
 
 	fmt.Println("Starting the server at port 8000")
-	log.Fatal(http.ListenAndServe("7777" , r))
+	log.Fatal(http.ListenAndServe(":9090" , r))
 
 }
 
