@@ -46,14 +46,14 @@ func CreateBook(w http.ResponseWriter  , r *http.Request){
 	b:= CreateBook.CreateBook()
 	res,_ := json.Marshal(b)
 	w.WriteHeader(http.StatusOK)
-	w,Write(res)
+	w.Write(res)
 
 
 }
 
 
 func DeleteBook(w http.ResponseWriter   , r *http.Request){
-	var:= mux.vars(r)
+	var  := mux.Vars(r)
 	bookId := vars["bookId"]
 	ID , err := strconv.ParseInt(bookId , 0 , 0)
 	if(err != nil){

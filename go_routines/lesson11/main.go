@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-
 )
 
 func main () {
@@ -17,11 +16,14 @@ func main () {
 	//if both cases are available ...it eill select one at random and execute 
 
 
+	//If you give a default value then it can become nonblocking
 	select {
 	case message := <-ninja1:
 		fmt.Println(message)
 	case message := <-ninja2:
 		fmt.Println(message)
+	default:
+		fmt.Println("Non blocking !!!!")
 	}
 	roughlyFair()
 
