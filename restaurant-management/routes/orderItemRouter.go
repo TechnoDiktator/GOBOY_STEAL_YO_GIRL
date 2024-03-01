@@ -5,7 +5,7 @@ import (
 	controller "restaurant-management/controllers"
 )
 
-func OrderItemsRoutesoutes(incomingRoutes *gin.Engine) {
+func OrderItemsRoutes(incomingRoutes *gin.Engine) {
 
 	incomingRoutes.GET("/orderItems"  , controller.GetOrderItems())
 	incomingRoutes.GET("/orderItems/:orderItem_id" , controller.GetOrderItem())
