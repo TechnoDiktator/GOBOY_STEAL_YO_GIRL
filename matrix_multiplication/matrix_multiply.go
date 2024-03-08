@@ -64,6 +64,12 @@ func main() {
 
 		//THIS IS THE FUCKING DEADLOCKER!!!!!
 		waitGroup.Add(matrixSize)
+		//DEADLOCKER
+
+		//THIS IS HOW WE WILL FIX
+		for j:= 0  ; j < matrixSize ; j++ {
+			waitGroup.Done()
+		}
 		
 	}
 
